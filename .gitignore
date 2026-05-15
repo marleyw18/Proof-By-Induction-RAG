@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Other
+Examples and other things/
+Delete/
+deepseek-r1.py
+example.py

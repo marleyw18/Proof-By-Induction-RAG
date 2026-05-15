@@ -1,0 +1,11 @@
+{
+  "total_files_processed": 4,
+  "total_rows": 3597,
+  "total_chunks": 6624,
+  "files_processed": [
+    "WrittenInduction_Divisibilty Raw.csv",
+    "WrittenInduction_Recurrence Raw.csv",
+    "WrittenInduction_Sum Raw.csv",
+    "WrittenInduction_v1 Raw.csv"
+  ]
+}
