@@ -42,33 +42,35 @@ A specialized AI chatbot web application focused on teaching and assisting with 
 ```bash
 git clone https://github.com/yourusername/Proof-By-Induction-RAG.git
 cd Proof-By-Induction-RAG
+# create virtual environment in project root
+python -m venv .venv
 ```
 ### 2. Backend Setup (Flask)
-```terminal 
-cd aichatbot
-python -m venv venv
-```
-```
+```terminal 1
 # Activate virtual environment
 # Windows:
-.\venv\Scripts\activate
+.venv/Scripts/activate
 # macOS/Linux:
 source venv/bin/activate
 ```
+
 ```
 # Install dependencies
 pip install -r requirements.txt
 ```
+
 ```
+cd WorkingDir/server
+
 # Run the Flask server
 flask run
 # or
-python app.py
+python server.py
 ```
 
 ### 3. Frontend Setup (React)
-``` bash
-cd frontend
+```terminal 2
+cd WorkingDir/client/aichatbot
 npm install
-npm start
+npm run dev
 ```

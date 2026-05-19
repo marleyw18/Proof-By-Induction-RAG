@@ -10,6 +10,11 @@ with open('prompt', "r") as file:
     prompt = file.read()
     print("...System prompt loaded")
 
+# home page
+@app.route("/")
+def home():
+    return "Hello welcome to your proof by induction tutor!"
+
 # post endpoint and processing data
 @app.route("/chat", methods=["POST"])
 def chat():
