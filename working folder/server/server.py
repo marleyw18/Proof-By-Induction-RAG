@@ -5,10 +5,10 @@ import ollama
 app = Flask(__name__)
 CORS(app)
 
-# get endpoint
-@app.route("/chat", methods=["GET"])
-def getChat():
-    return jsonify({"reply": "Hello friend"})
+# Prompt for AI model
+with open('prompt', "r") as file:
+    prompt = file.read()
+    print("...System prompt loaded")
 
 # post endpoint and processing data
 @app.route("/chat", methods=["POST"])

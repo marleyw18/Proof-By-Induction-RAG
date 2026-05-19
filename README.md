@@ -1,12 +1,74 @@
 # Proof-By-Induction-RAG
-A local AI chatbot webapp using llama3. 
-The app will eventually be specialized to handle Proof by Induction. 
 
-Future plans:
+A specialized AI chatbot web application focused on teaching and assisting with **Proof by Induction**. Built with Llama 3, Flask, and React.
 
-Retrieval-augmented generation pipeline using an array of proof by induction data from text books, websites, Excel files, etc. to eventually be implemented into the chatbot.
+> 🎓 *A self-learning project to explore LLMs, Retrieval-Augmented Generation (RAG), and software engineering fundamentals.*
 
-This is ultimately a project to teach myself how to work with LLM's, RAG, and play around with software engineering basics.
+---
 
-Followed this video to create UI and get app set up initially: https://www.youtube.com/watch?v=0kdtfybr1NM 
-    Link to GitHub repo: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa00xeTV5dzVRaEN4SUpQbmdhQ0dKQzd1TnFQQXxBQ3Jtc0ttR0U2d1NGZVZpLUpkZzZiUlFEdnR6eG5XTjc3eFpjQncyWWgxVVBEbm1jT3otVVdRcDQyd0d1ZjZmZzRYLUNFdlp6cF9UYkptVnR6RktJaTZRQl9CMEx2VUJhRjBLN3JsWk5qblpsSC13UVdvUElTcw&q=https%3A%2F%2Fgithub.com%2FtheCodingHeaven%2FAI-ChatBot%2Ftree%2Fmain&v=0kdtfybr1NM
+## 🚀 Features
+
+- **LLM-Powered Chatbot** — Uses Llama 3 for natural language interaction
+- **Proof by Induction Focus** — Designed to help understand and construct inductive proofs
+- **Modular Architecture** — Flask backend + React frontend
+- *(Future)* **RAG Pipeline** — Will retrieve context from textbooks, websites, and Excel files to enhance responses
+
+---
+
+## 🧱 Tech Stack
+
+| Layer       | Technology                         |
+|-------------|------------------------------------|
+| Frontend    | React, CSS                         |
+| Backend     | Flask (Python)                     |
+| LLM         | Llama 3 (via Ollama or local setup)|
+| Future RAG  | Vector DB (Chroma/FAISS), LangChain|
+
+---
+
+## 📦 Installation & Setup
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js (v18+ recommended)
+- npm or yarn
+- (Optional) [Ollama](https://ollama.com/) for running Llama 3 locally (Or a different model)
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/Proof-By-Induction-RAG.git
+cd Proof-By-Induction-RAG
+```
+### 2. Backend Setup (Flask)
+```terminal 
+cd aichatbot
+python -m venv venv
+```
+```
+# Activate virtual environment
+# Windows:
+.\venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+```
+```
+# Install dependencies
+pip install -r requirements.txt
+```
+```
+# Run the Flask server
+flask run
+# or
+python app.py
+```
+
+### 3. Frontend Setup (React)
+``` bash
+cd frontend
+npm install
+npm start
+```
