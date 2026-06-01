@@ -5,23 +5,23 @@ SET SESSION autocommit = 0;
 
 -- view data
 select *
-FROM proofbyindrag.div;
+FROM proofbyindrag.v1;
 
 -- Begin by creating all necessary columns
-ALTER TABLE proofbyindrag.div 
+ALTER TABLE proofbyindrag.v1 
 	ADD COLUMN total_score INT,
     ADD COLUMN quality_score VARCHAR(20),
     ADD COLUMN weaknesses LONGTEXT,
     ADD COLUMN strengths LONGTEXT,
     ADD COLUMN question LONGTEXT;
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.v1
     SET question =
-    'Use (strong) induction to prove the following claim: For any natural number \(n\), \(2n^3 + 3n^2 + n\) is divisible by 6.
-'
+    'For every natural number n,
+0 + 1 + 2 + ... + n = n(n + 1) / 2.'
 ;
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.v1
 SET Total_score = 
 	`Identify.Base.Case` + 
 	`Prove.Base.Case` + 
@@ -31,7 +31,7 @@ SET Total_score =
     `Expression.of.Size.k.1.is.decomposed.into.expression.of.size.k` +
     `Inductive.Hypothesis.is.applied`;
     
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.v1
     SET Quality_score = 
         CASE 
             WHEN Total_score <= 5 THEN 'Very Poor'
@@ -41,7 +41,7 @@ UPDATE proofbyindrag.div
         END
 ;
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.v1
 SET Weaknesses = CONCAT(
     CASE `Identify.Base.Case`
         WHEN 0 THEN 'Failure to identify the base case. '
@@ -80,7 +80,7 @@ SET Weaknesses = CONCAT(
     END
 );
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.v1
 	SET Strengths = CONCAT(
     CASE WHEN `Identify.Base.Case` = 2 THEN 'Successful identification of the base case. ' ELSE '' END,
     CASE WHEN `Prove.Base.Case` = 2 THEN 'Successfully proven base case. ' ELSE '' END,
@@ -93,14 +93,14 @@ UPDATE proofbyindrag.div
          THEN 'Successful application of the inductive hypothesis. ' ELSE '' END
 );
 
-ALTER TABLE proofbyindrag.div 
-RENAME COLUMN weaknesses TO Weaknesses,
-RENAME COLUMN strengths TO Strengths,
-RENAME COLUMN total_score to Total_score,
-RENAME COLUMN quality_score TO Quality_score,
-RENAME COLUMN question TO Question;
+ALTER TABLE proofbyindrag.V1
+	RENAME COLUMN weaknesses TO Weaknesses,
+	RENAME COLUMN strengths TO Strengths,
+	RENAME COLUMN total_score to Total_score,
+	RENAME COLUMN quality_score TO Quality_score,
+	RENAME COLUMN question TO Question;
 
 SELECT * 
-FROM proofbyindrag.div;
+FROM proofbyindrag.v1;
 
 COMMIT;

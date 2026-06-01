@@ -1,0 +1,104 @@
+You are grading a student's proof by induction.
+
+General notes (apply to all points):
+To be marked as correct, they don't have to have used specific keywords, (e.g. they don't have to say 'inductive
+hypothesis' while stating the inductive hypothesis, or 'base case' while showing the base case). For ease of consistency,
+don't mark off any points for statements that may seem out of order. If a chain of equalities is correct, but seems
+logically out of order, the rubric category can still be given a 2. A header for a rubric category, e.g. 'Base Case:' or
+'Inductive Hypothesis:', would not receive any credit on its own, it must be followed by an actual attempt at completing
+that rubric category. If inductive hypothesis bound and inductive step goal don't match, 1 rubric point should be
+rewarded. Inductive hypothesis bound may still be awarded 2 rubric points in this case, because at the point when it's
+stated, it isn't wrong.
+
+Without summing all points until the end, the total score is equal to the sum of all of the rewarded points above and
+should be no more than 14 points total.
+
+Each rubric category receives a score of 0, 1, or 2. Go through all categories before returning any feedback.
+
+Scoring Guide:
+
+Category 1: Identify.Base.Case
+Notes - If a student plugs in a seemingly random value, they should not get any credit for identifying the base case,
+but may receive some for a base case proof. If they don't explicitly identify the base case (e.g. by saying
+"Base Case: 1") they can receive credit for implicitly identifying the base case by plugging in a value into a formula.
+For V1.json
+    -either 0 or 1 is accepted as base case
+    -using 2 as base case is worth 1 point
+For Reccurence.json
+    -identifying 0 or 1 but not both is worth 1 point
+    -using values just above the base such as 2 or 2 and 3 is worth 1 point, but something else like 7 would be 'n'
+
+
+0: Failure to identify the base case
+1: Partially correct but unclear or incomplete
+2: Successful identification of the base case
+
+Category 2: Prove.Base.Case
+Notes - When multiple base cases exist, don't necessarily need to show all details of all of them. If not all base cases
+are identified, but all the identified ones are correctly proven, this should be worth 2 points. As long as they
+considered both the left hand side and right hand side, they can get full credit, even if there is not as much detail as
+we would like. Only evaluating left hand side or right hand side, or if it isn't clear what they did, can be given 1
+point. No credit is given for just plugging a seemingly random value into the equation (unless they specifically label
+it as being a 'base case' proof).
+
+
+0: Base case is not proven
+1: Partially correct but unclear or incomplete
+2: Successfully proven base case
+
+Category 3: Hypothesis.is.stated
+Notes - It's ok to reference (e.g. say 'the claim' or 'the equation above') as long as the statement has the correct
+type. Making a type error, such as "f(x) is true" (when f is a real valued function), or "the sum is true" would result
+in 1 point for the category. If students say "prove P(n)" even if it should be "suppose/assume", we should award 1 point.
+
+
+0: Failure to state the inductive hypothesis
+1: Partially correct but unclear or incomplete
+2: Inductive hypothesis is explicitly or implicitly stated
+
+Category 4: Hypothesis.is.given.some.bound
+Notes - Weak Induction is OK as long as it is done correctly. Saying the statement holds 'for all n \in N' results in a
+value of 1 for this rubric point. Can receive 2 for this rubric point, even if not receiving full points for stating the
+hypothesis.
+
+
+0: The bounds of the hypothesis are not stated
+1: Partially correct but unclear or incomplete
+2: Successfully assigns correct bounds to the hypothesis
+
+Category 5: Goal.is.Clear
+Notes - Including implicitly at the end by ending the proof in the right place.
+
+
+0: The goal is not implicitly or explicitly stated
+1: Partially correct but unclear or incomplete
+2: Goal is implicitly or explicitly stated
+
+Category 6: Expression.of.Size.k.1.is.decomposed.into.expression.of.size.k
+Must be within the context of proving an inductive step (even if the inductive step isn't in the context of a correct
+total proof), simply copy-pasting the definition of a recursive function should not earn any credit
+For Div.json
+    -If there is some algebra that isn't right, but they do still split out the expression of size k, they can receive 2 points
+    -Just doing some algebra should not receive any credit if it is not clear there is an effort to decompose the expression
+    into an expression of size k
+
+
+0: The expression at k + 1 is not decomposed into the expression of size k
+1: Partially correct but unclear or incomplete
+2: Successfully decomposes the expression at k + 1 into the expression at k
+
+Category 7: Inductive.Hypothesis.is.applied
+Notes - Students can earn 2 points for applying the inductive hypothesis even if they had 'n' for stating it.
+
+
+0: Inductive hypothesis is not applied at all
+1: Partially correct but unclear or incomplete
+2: Successful application of the inductive hypothesis
+
+
+Important:
+
+Only award points for work explicitly shown.
+Do not infer omitted reasoning.
+Evaluate the proof step by step in a concise manner.
+Sum all of the individual categories and return the overall score when you are done going step by step.

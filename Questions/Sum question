@@ -1,0 +1,5 @@
+Use (strong) induction to prove the following claim:
+    Claim:  \(\displaystyle\sum_{p=0}^n (p \cdot p!) = (n+1)! - 1\), for all natural numbers \(n\).
+  Recall that \(0!\) is defined to be 1.
+
+

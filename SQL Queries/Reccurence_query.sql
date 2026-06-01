@@ -5,23 +5,33 @@ SET SESSION autocommit = 0;
 
 -- view data
 select *
-FROM proofbyindrag.div;
+FROM proofbyindrag.recurrence;
 
 -- Begin by creating all necessary columns
-ALTER TABLE proofbyindrag.div 
+ALTER TABLE proofbyindrag.recurrence
 	ADD COLUMN total_score INT,
     ADD COLUMN quality_score VARCHAR(20),
     ADD COLUMN weaknesses LONGTEXT,
     ADD COLUMN strengths LONGTEXT,
     ADD COLUMN question LONGTEXT;
+    
+ALTER TABLE proofbyindrag.recurrence 
+	MODIFY COLUMN weaknesses LONGTEXT,
+    MODIFY COLUMN strengths LONGTEXT;
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.recurrence
     SET question =
-    'Use (strong) induction to prove the following claim: For any natural number \(n\), \(2n^3 + 3n^2 + n\) is divisible by 6.
+    'Suppose that g : N → R is defined by:
+g(0) = 0
+g(1) = 4/3
+g(n) = (4/3)g(n − 1) − (1/3)g(n − 2), for n ≥ 2.
+
+Use induction to prove that
+g(n) = 2 − 2/(3^n) for every natural number n.
 '
 ;
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.recurrence
 SET Total_score = 
 	`Identify.Base.Case` + 
 	`Prove.Base.Case` + 
@@ -31,7 +41,7 @@ SET Total_score =
     `Expression.of.Size.k.1.is.decomposed.into.expression.of.size.k` +
     `Inductive.Hypothesis.is.applied`;
     
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.recurrence
     SET Quality_score = 
         CASE 
             WHEN Total_score <= 5 THEN 'Very Poor'
@@ -41,7 +51,7 @@ UPDATE proofbyindrag.div
         END
 ;
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.recurrence
 SET Weaknesses = CONCAT(
     CASE `Identify.Base.Case`
         WHEN 0 THEN 'Failure to identify the base case. '
@@ -80,7 +90,7 @@ SET Weaknesses = CONCAT(
     END
 );
 
-UPDATE proofbyindrag.div
+UPDATE proofbyindrag.recurrence
 	SET Strengths = CONCAT(
     CASE WHEN `Identify.Base.Case` = 2 THEN 'Successful identification of the base case. ' ELSE '' END,
     CASE WHEN `Prove.Base.Case` = 2 THEN 'Successfully proven base case. ' ELSE '' END,
@@ -93,7 +103,10 @@ UPDATE proofbyindrag.div
          THEN 'Successful application of the inductive hypothesis. ' ELSE '' END
 );
 
-ALTER TABLE proofbyindrag.div 
+ALTER TABLE proofbyindrag.recurrence
+	DROP COLUMN Score_Feedback;
+    
+ALTER TABLE proofbyindrag.recurrence
 RENAME COLUMN weaknesses TO Weaknesses,
 RENAME COLUMN strengths TO Strengths,
 RENAME COLUMN total_score to Total_score,
@@ -101,6 +114,6 @@ RENAME COLUMN quality_score TO Quality_score,
 RENAME COLUMN question TO Question;
 
 SELECT * 
-FROM proofbyindrag.div;
+FROM proofbyindrag.recurrence;
 
 COMMIT;

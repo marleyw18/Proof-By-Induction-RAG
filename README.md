@@ -1,5 +1,7 @@
 # Proof-By-Induction-RAG
 
+Dataset found here: https://link.springer.com/article/10.1007/s40593-025-00498-2
+
 A specialized AI chatbot web application focused on teaching and assisting with **Proof by Induction**. Built with Llama 3, Flask, and React.
 
 > 🎓 *A self-learning project to explore LLMs, Retrieval-Augmented Generation (RAG), and software engineering fundamentals.*
@@ -10,7 +12,7 @@ A specialized AI chatbot web application focused on teaching and assisting with 
 
 - **LLM-Powered Chatbot** — Uses Llama 3 for natural language interaction
 - **Proof by Induction Focus** — Designed to help understand and construct inductive proofs
-- **Modular Architecture** — Flask backend + React frontend
+- *(Future)* **Modular Architecture** — Flask backend + React frontend
 - *(Future)* **RAG Pipeline** — Will retrieve context from textbooks, websites, and Excel files to enhance responses
 
 ---
@@ -37,40 +39,18 @@ A specialized AI chatbot web application focused on teaching and assisting with 
 
 ---
 
-### 1. Clone the Repository
+### To run locally
 
-```bash
+```powershell
 git clone https://github.com/yourusername/Proof-By-Induction-RAG.git
 cd Proof-By-Induction-RAG
 # create virtual environment in project root
 python -m venv .venv
 ```
-### 2. Backend Setup (Flask)
-```terminal 1
-# Activate virtual environment
-# Windows:
-.venv/Scripts/activate
-# macOS/Linux:
-source venv/bin/activate
-```
-
-```
-# Install dependencies
+```powershell
+# install requirements
 pip install -r requirements.txt
 ```
-
-```
-cd WorkingDir/server
-
-# Run the Flask server
-flask run
-# or
-python server.py
-```
-
-### 3. Frontend Setup (React)
-```terminal 2
-cd WorkingDir/client/aichatbot
-npm install
-npm run dev
+```powershell
+python grader.py
 ```
