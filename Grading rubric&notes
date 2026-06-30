@@ -1,0 +1,23 @@
+Proof Section,Code Name,Explanation/Notes,Q1_WrittenInduction_v1 Specific,WrittenInduction_Recurrence_v3 Specific,WrittenInduction_Divisibilty_v4 Specific
+Base case,Identify Base Case,"If a student plugs in a seemingly random value, they should not get any credit for identifying the base case, but may receive some for a base case proof. If they don't explicitly identify the base case (e.g. by saying ""Base Case: 1"") they can recieve credit for implicilty identifying the base case by plugging in a value into a formula.","-either 0 or 1 is accepted as base case
+-using 2 as base case is 'p'","-identifying 0 or 1 but not both is 'p'
+-using values just above the base such as 2 or 2 and 3 is a 'p', but something else like 7 would be 'n'",
+,Prove Base Case,"When multiple base cases, don't necessarily need to show all details of all of them. If not all base cases are identified, but all the identified ones are correctly proven, this should be 'c'. As long as they considered both LHS and RHS, they can get full credit, even if there is not as much detail as we would like. Only evaluating LHS or RHS, or if it isn't clear what they did, can be given a 'p'.  No credit is given for just plugging a seemingly random value into the equation (unless they specifically label it as being a 'base case' proof).",,,
+Inductive Hypothesis,Hypothesis is stated,"Its ok to reference (e.g. say 'the claim' or 'the equation above') as long as the statement has the correct type. Making a type error, such as ""f(x) is true"" (when f is a real valued function), or ""the sum is true"" would result in a 'p'. 
+if students say ""prove P(n)"" even if it should be ""suppose/assume"", we should mark as p",,,
+,Hypothesis is given some bound,"Weak Induction is OK as long as it is done correctly. Saying the statement holds 'for all n \in N' results in a value of 'p' for this rubric point. Can recieve 'c' on this point, even if not recieving full points for stating the hypothesis.",,,
+Inductive Step ,Goal is clear,Including implicitly at the end by ending the proof in the right place.,,,
+,Expression of Size k+1 is decomposed into expression of size k,"Must be within the context of proving an inductive step (even if the inductive step isn't in the context of a correct total proof), simply copy-pasting the definition of a recursive function should not earn any credit",,,"-If there is some algebra that isn't right, but they do still split out the expression of size k, they can recieve 'c'  
+-Just doing some algebra should not recieve any credit if it is not clear there is an effort to decompose the expression into an expression of size k"
+,Inductive Hypothesis is applied,Students can earn 'c' for applying the inductive hypothesis even if they had 'n' for stating it.,,,
+
+
+General notes (apply to all points)
+To be marked as correct, they don't have to have used specific keywords, (e.g. they don't have to say 'inductive
+hypothesis' while stating the inductive hypothesis, or 'base case' while showing the base case)
+For ease of consistency, don't mark of any points for statements that may seem out of order.
+If a chain of equalities is correct, but seems logically out of order, the rubric point can still be marked 'c'
+A header for a rubric point, e.g. 'Base Case:' or 'Inductive Hypothesis:', would not receive any credit on its own, it
+must be followed by an actual attempt at completing that rubric point.
+If inductive hypothesis bound and inductive step goal don't match, goal should be marked as 'p'. Inductive hypothesis
+bound may still be marked as 'c' in this case, because at the point when its stated, it isn't wrong.
