@@ -25,16 +25,16 @@ for filename in os.listdir(folder):
 
         train, test = train_test_split(df, train_size=.8, random_state=42)
 
-        os.makedirs("RAG Data", exist_ok=True)
-        os.makedirs("Evaluation Data", exist_ok=True)
+        os.makedirs("../RAG Data", exist_ok=True)
+        os.makedirs("../Evaluation Data", exist_ok=True)
 
         # Separate data for validation and RAG
         # save for RAG
-        rag_path = os.path.join('RAG Data', 'RAG Ready ' + filename)
+        rag_path = os.path.join('../RAG Data', 'RAG Ready ' + filename)
         train.to_json(rag_path, orient='records', indent=2)
 
         # save questions, we will be using to compute metrics
-        val_path = os.path.join('Evaluation Data', 'Evaluation ' + filename)
+        val_path = os.path.join('../Evaluation Data', 'Evaluation ' + filename)
         test.to_json(val_path, orient='records', indent=2)
 
         print(f"Saved {len(train)} training records to {rag_path}")

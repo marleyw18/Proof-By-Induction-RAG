@@ -20,14 +20,14 @@ This project aims to build a specialized assistant for teaching and evaluating *
 
 ## 🎯 Current Features
 
-| Feature | Status | Description |
-|---------|--------|-------------|
-| Data Processing | ✅ Complete | Cleaned & structured induction proof dataset |
-| RAG Data Preparation | ✅ Complete | Split data for retrieval & evaluation |
-| Model Evaluation | ✅ Complete | Script to grade LLM responses against rubrics |
-| SQL Querying | ✅ Complete | Structured proof data storage & retrieval |
-| Web Interface | 🚧 Planned | React frontend + Flask backend |
-| Real-time RAG | 🚧 Planned | Vector DB integration with Chroma/FAISS |
+| Feature | Status         | Description |
+|---------|----------------|-------------|
+| Data Processing | ✅ Complete     | Cleaned & structured induction proof dataset |
+| RAG Data Preparation | ✅ Complete     | Split data for retrieval & evaluation |
+| Model Evaluation | 🚧 In Progress | Script to grade LLM responses against rubrics |
+| SQL Querying | ✅ Complete     | Structured proof data storage & retrieval |
+| Web Interface | 🚧 Planned     | React frontend + Flask backend |
+| Real-time RAG | 🚧 Planned     | Vector DB integration with Chroma/FAISS |
 
 ## 🧱 Tech Stack
 

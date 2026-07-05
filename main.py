@@ -2,7 +2,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 
 # System rubric_prompt
-with open('system_prompt', "r") as file:
+with open('Prompts/system_prompt', "r") as file:
     prompt = file.read()
     print("...System prompt loaded")
 

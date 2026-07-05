@@ -1,0 +1,22 @@
+Evaluate each category (0, 1, or 2 points):
+
+    Base Case Identification (2 pts): Correct base value(s) identified. Partial: wrong/missing values get 1; no identification gets 0.
+
+    Base Case Proof (2 pts): Both LHS and RHS evaluated correctly. Partial: one side only or unclear work gets 1; no proof gets 0.
+
+    Inductive Hypothesis Stated (2 pts): Claim correctly restated as assumption. Partial: type errors or vague references get 1; no statement gets 0.
+
+    Hypothesis Bounds (2 pts): Correct bounds stated (e.g., n≥k). Partial: wrong/vague bounds get 1; no bounds get 0.
+
+    Goal Clear (2 pts): Shows what needs proving for k+1. Partial: unclear gets 1; no goal stated gets 0.
+
+    Decomposition (2 pts): Splits k+1 expression into k expression. Partial: algebra errors or unclear effort get 1; no decomposition gets 0.
+
+    Apply Hypothesis (2 pts): Uses IH correctly in the proof. Partial: unclear application gets 1; no application gets 0.
+
+Key Rules:
+Award only for shown work; don't infer.
+Headers alone earn nothing.
+If IH bound and goal don't match, category 4 can still get 2 (it's correct at the time stated).
+Sum all category scores (max 14).
+
